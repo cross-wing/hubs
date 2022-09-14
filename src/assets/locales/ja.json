@@ -273,7 +273,7 @@
   "mic-permissions-modal.grant-mic-permissions": "マイクの権限を付与する",
   "mic-permissions-modal.mic-access-needed": "マイクへのアクセスは他の人に聞こえる必要がありました。{linebreak}マイクはルームでミュートできます。",
   "mic-permissions-modal.title": "デバイスに入力",
-  "mic-setup-modal.check-mic": "VOiCEVRでは迷惑行為防止の観点により、マイク機能を利用不可とさせていただいております。",
+  "mic-setup-modal.check-mic": "VOiCEVRでは迷惑行為防止の観点により、マイク機能を利用不可とさせていただいております。MUTEでご入室ください。",
   "mic-setup-modal.enter-room-button": "ルームに入る",
   "mic-setup-modal.mic-disabled": "マイク無効",
   "mic-setup-modal.mute-mic-toggle": "マイクをミュート",
