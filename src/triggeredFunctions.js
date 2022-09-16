@@ -57,6 +57,96 @@ export class triggeredFunctions {
 	}
 
 
+	static innerFrameVoiceClick(numberStr) {
+		const jsFrame = new JSFrame();
+		const windowtitle = 'VOiCE VR';
+		//アンカー
+		const align = 'CENTER_CENTER';
+		//iframe内に表示するURL
+		const innerurl = 'https://voice-doujin.space/vr/inner/nndb.php?config='+numberStr;
+		const x = window.innerWidth / 2;
+		const y = window.innerHeight / 2.2;
+		var posx = 0;
+		var posy = 0;
+		var widthx = 0;
+		var heighty = 0;
+
+		if (x >= 320) {
+			widthx = x * 0.9;
+			heighty = y * 1.5;
+			posx = x / 2;
+			posy = y;
+		} else {
+			widthx = x * 1.8;
+			heighty = y * 1.5;
+			posx = x;
+			posy = y;
+		}
+
+		const frame = jsFrame.create({
+			title: windowtitle,
+			width: widthx,
+			height: heighty,
+			movable: true,//マウスで移動可能
+			resizable: true,//マウスでリサイズ可能
+			url: innerurl,
+			urlLoaded: (_frame) => { }
+		});
+
+		frame.setPosition(posx, posy, align);
+		frame.show();
+
+	}
+
+
+
+	static popupVoiceClick(numberStr) {
+
+		const LINK = 'https://voice-doujin.space/vr/inner/nndb.php?config='+numberStr; // 別タブ遷移したいURL
+
+
+		const x = window.innerWidth;
+		const y = window.innerHeight;
+		var posx = 0;
+		var posy = 0;
+		var widthx = 0;
+		var heighty = 0;
+
+		if (x >= 640) {
+			widthx = x * 0.5;
+			heighty = y * 0.9;
+			posx = x /8;
+			posy = y /8;
+		} else {
+			widthx = x * 0.9;
+			heighty = y * 0.9;
+			posx = x /10;
+			posy = y /10;
+		}
+	
+	
+		var wOption = "top=" + posy + ", left=" + posx + ", height=" + heighty + ", width=" + widthx + ", menubar=no" + ", toolbar=no" + ", location=no" + ", status=no" + ", resizable=yes" + ", scrollbars=yes" + ", directories=no";
+
+		// 画面を開く
+		var winObj = window.open(LINK, "_blank", wOption);
+		winObj.focus();
+
+		try {
+			winObj.resizeTo(widthx, heighty);
+			winObj.moveTo(posx, posy);
+		} catch (e) {
+		}
+
+	
+
+
+	}
+
+
+
+
+
+
 
 	static innerFrameNumClick(numberStr) {
 		const jsFrame = new JSFrame();

@@ -60,6 +60,19 @@ export class SuperSpawnerSystem {
         var numberStr = state.hovered.object3D.name.substring(target+5, target+7);
         triggeredFunctions.innerFrameNumClick(numberStr);
       }
+
+      else if (state.hovered.object3D.name.indexOf('voicefrm') !== -1) {
+        var target = state.hovered.object3D.name.indexOf('voicefrm');
+        var numberStr = state.hovered.object3D.name.match(/\_.+?\_/);
+        triggeredFunctions.innerFrameVoiceClick(numberStr);
+      }
+
+      else if (state.hovered.object3D.name.indexOf('voicepop') !== -1) {
+        var target = state.hovered.object3D.name.indexOf('voicepop');
+        var numberStr = state.hovered.object3D.name.match(/\_.+?\_/);
+        triggeredFunctions.popupVoiceClick(numberStr);
+      }
+
       else if (state.hovered.object3D.name.indexOf('inner01') !== -1) {
         triggeredFunctions.innerFrame01Click();
       }
