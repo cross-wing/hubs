@@ -160,11 +160,17 @@ export const CAMERA_MODE_INSPECT = 3;
 export const CAMERA_MODE_SCENE_PREVIEW = 4;
 export const CAMERA_MODE_THIRD_PERSON_VIEW = 5;
 
+//const NEXT_MODES = {
+//  [CAMERA_MODE_FIRST_PERSON]: CAMERA_MODE_THIRD_PERSON_NEAR,
+//  [CAMERA_MODE_THIRD_PERSON_NEAR]: CAMERA_MODE_THIRD_PERSON_FAR,
+//  [CAMERA_MODE_THIRD_PERSON_FAR]: CAMERA_MODE_FIRST_PERSON
+//};
+
 const NEXT_MODES = {
-  [CAMERA_MODE_FIRST_PERSON]: CAMERA_MODE_THIRD_PERSON_NEAR,
-  [CAMERA_MODE_THIRD_PERSON_NEAR]: CAMERA_MODE_THIRD_PERSON_FAR,
-  [CAMERA_MODE_THIRD_PERSON_FAR]: CAMERA_MODE_FIRST_PERSON
+  [CAMERA_MODE_FIRST_PERSON]: CAMERA_MODE_THIRD_PERSON_VIEW,
+  [CAMERA_MODE_THIRD_PERSON_VIEW]: CAMERA_MODE_FIRST_PERSON
 };
+
 
 const ensureLightsAreSeenByCamera = function(o) {
   if (o.isLight) {
@@ -542,7 +548,8 @@ export class CameraSystem {
         }
       } else if (this.mode === CAMERA_MODE_THIRD_PERSON_VIEW) {
         this.viewingCameraRotator.on = false;
-        translation.makeTranslation(0, 0, 1);
+        //translation.makeTranslation(0, 0, 1);
+        translation.makeTranslation(0, 1, 3);
         this.avatarRig.object3D.updateMatrices();
         setMatrixWorld(this.viewingRig.object3D, this.avatarRig.object3D.matrixWorld);
         if (scene.is("vr-mode")) {
