@@ -393,6 +393,7 @@
   "preferences-screen.preference.enable-gyro": "ジャイロスコープを有効にする（ブラウザ/デバイスでサポートされている場合）",
   "preferences-screen.preference.enable-on-screen-joystick-left": "画面上の左側のジョイスティックで移動できるようにする",
   "preferences-screen.preference.enable-on-screen-joystick-right": "画面上の右のジョイスティックで見回せるようにする",
+  "preferences-screen.preference.enable-third-person-view": "３人称視点の切り替え",
   "preferences-screen.preference.fast-room-switching": "高速ルーム切り替えを有効にする",
   "preferences-screen.preference.global-media-volume": "メディアボリューム",
   "preferences-screen.preference.global-voice-volume": "着信音声ボリューム",
