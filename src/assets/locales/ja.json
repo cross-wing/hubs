@@ -119,6 +119,7 @@
   "close-room-modal.type-to-confirm": "確認するルーム名を入力してください：{roomName}",
   "content-menu.objects-menu-button": "オブジェクト",
   "content-menu.people-menu-button": "参加者",
+  "content-menu.custom-switch-person-view-button": "3人称視点切り替え",
   "copyable-text-input-field.copied-label": "コピー",
   "copyable-text-input-field.copy-label": "コピー",
   "create-room-button": "ルームを作成する",
