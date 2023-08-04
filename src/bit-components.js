@@ -11,7 +11,8 @@ export const Networked = defineComponent({
   creator: Types.ui32,
   owner: Types.ui32,
 
-  lastOwnerTime: Types.ui32
+  lastOwnerTime: Types.ui32,
+  timestamp: Types.ui32
 });
 Networked.id[$isStringType] = true;
 Networked.creator[$isStringType] = true;
@@ -33,6 +34,7 @@ export const MediaFrame = defineComponent({
   previewingNid: Types.eid
 });
 export const Text = defineComponent();
+export const ReflectionProbe = defineComponent();
 export const Slice9 = defineComponent({
   insets: [Types.ui32, 4],
   size: [Types.f32, 2]
@@ -47,6 +49,7 @@ export const NetworkedTransform = defineComponent({
 export const AEntity = defineComponent();
 export const Object3DTag = defineComponent();
 export const GLTFModel = defineComponent();
+export const DirectionalLight = defineComponent();
 export const CursorRaycastable = defineComponent();
 export const RemoteHoverTarget = defineComponent();
 export const NotRemoteHoverTarget = defineComponent();
@@ -67,6 +70,11 @@ export const HeldHandLeft = defineComponent();
 export const HeldRemoteRight = defineComponent();
 export const HeldRemoteLeft = defineComponent();
 export const Held = defineComponent();
+export const Constraint = defineComponent();
+export const ConstraintHandRight = defineComponent();
+export const ConstraintHandLeft = defineComponent();
+export const ConstraintRemoteRight = defineComponent();
+export const ConstraintRemoteLeft = defineComponent();
 export const OffersRemoteConstraint = defineComponent();
 export const HandCollisionTarget = defineComponent();
 export const OffersHandConstraint = defineComponent();
@@ -107,8 +115,8 @@ export const CameraTool = defineComponent({
   trackTarget: Types.eid,
 
   snapMenuRef: Types.eid,
-  button_next: Types.eid,
-  button_prev: Types.eid,
+  nextButtonRef: Types.eid,
+  prevButtonRef: Types.eid,
   snapRef: Types.eid,
   cancelRef: Types.eid,
   recVideoRef: Types.eid,
@@ -120,3 +128,69 @@ export const CameraTool = defineComponent({
   sndToggleRef: Types.eid
 });
 export const MyCameraTool = defineComponent();
+export const MediaLoader = defineComponent({
+  src: Types.ui32,
+  flags: Types.ui8
+});
+MediaLoader.src[$isStringType] = true;
+
+export const SceneRoot = defineComponent();
+export const NavMesh = defineComponent();
+export const SceneLoader = defineComponent({ src: Types.ui32 });
+SceneLoader.src[$isStringType] = true;
+
+export const MediaImage = defineComponent({
+  cacheKey: Types.ui32
+});
+MediaImage.cacheKey[$isStringType] = true;
+
+export const MediaVideo = defineComponent({
+  autoPlay: Types.ui8
+});
+
+export const AnimationMixer = defineComponent();
+export const NetworkedVideo = defineComponent({
+  time: Types.f32,
+  flags: Types.ui8
+});
+
+export const VideoMenuItem = defineComponent();
+export const VideoMenu = defineComponent({
+  videoRef: Types.eid,
+  timeLabelRef: Types.eid,
+  trackRef: Types.eid,
+  headRef: Types.eid,
+  playIndicatorRef: Types.eid,
+  pauseIndicatorRef: Types.eid
+});
+
+export const AudioEmitter = defineComponent();
+export const AudioSettingsChanged = defineComponent();
+export const Deletable = defineComponent();
+
+export const EnvironmentSettings = defineComponent();
+EnvironmentSettings.map = new Map();
+
+// TODO: Store this data elsewhere, since only one or two will ever exist.
+export const ObjectMenu = defineComponent({
+  pinButtonRef: Types.eid,
+  cameraFocusButtonRef: Types.eid,
+  cameraTrackButtonRef: Types.eid,
+  removeButtonRef: Types.eid,
+  dropButtonRef: Types.eid,
+  inspectButtonRef: Types.eid,
+  deserializeDrawingButtonRef: Types.eid,
+  openLinkButtonRef: Types.eid,
+  refreshButtonRef: Types.eid,
+  cloneButtonRef: Types.eid,
+  rotateButtonRef: Types.eid,
+  mirrorButtonRef: Types.eid,
+  scaleButtonRef: Types.eid,
+  targetRef: Types.eid
+});
+
+export const ObjectMenuTarget = defineComponent();
+export const NetworkDebug = defineComponent();
+export const NetworkDebugRef = defineComponent({
+  ref: Types.eid
+});
